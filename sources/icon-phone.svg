@@ -1,0 +1,4 @@
+<svg id="icon-phone" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <rect id="사각형_204" data-name="사각형 204" width="20" height="20" rx="10" fill="#3e90e2"/>
+  <path id="mobile-screen-button-solid" d="M15,1.775A1.777,1.777,0,0,1,16.775,0h7a1.777,1.777,0,0,1,1.775,1.775V12.424A1.777,1.777,0,0,1,23.776,14.2h-7A1.777,1.777,0,0,1,15,12.424Zm6.252,10.649a.887.887,0,1,0-.887.887A.887.887,0,0,0,21.252,12.424ZM23.776,1.775h-7v8.874h7Z" transform="translate(-10.532 2.901)" fill="#fff"/>
+</svg>
