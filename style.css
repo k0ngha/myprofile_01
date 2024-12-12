@@ -122,10 +122,6 @@ section div.desc {
 }
 
 /* LOCATION */
-section .desc.join_code {
-    cursor: pointer;
-}
-
 section span {
     font-size: 1.3rem;
     color: #ABB2B9;
@@ -135,6 +131,46 @@ section iframe {
     width: 100vw;
     height: 208px;
     margin: 34px calc(-50vw + 50%);
+}
+
+.click__area {
+    position: relative;
+}
+
+.click__area::after {
+    content: "복사완료!";
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translatex(-50%);
+    background-color: #17202A;
+    opacity: 0;
+    display: block;
+    padding: 10px 10px;
+    border-radius: 50px;
+    color: #ffffff;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+.click__area.animate::after {
+    animation: complete-copy ease-out 1s backwards;
+}
+  
+@keyframes complete-copy {
+    0% {
+    bottom: 100%;
+    opacity: 0;
+    }
+    50% {
+    bottom: 140%;
+    opacity: 1;
+    }
+    90% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
 }
 
 /* 푸터 */

@@ -66,7 +66,7 @@
 
         <section>
             <div class="title">LOCATION</div>
-            <div class="desc join_code" onclick="copyCode()">서울특별시 송파구 올림픽로 333</div>
+            <div class="desc click__area" id="copy__txt" onclick="copyContent()">서울특별시 송파구 올림픽로 333</div>
             <span>333, Olympic-ro,  Songpa-gu,  Seoul, Republic of Korea</span>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.443479800856!2d127.10598472728948!3d37.521041972050355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca56dcaef5f6f%3A0xa336927a7e29205c!2z7ISc7Jq47Yq567OE7IucIOyGoe2MjOq1rCDsmKzrprztlL3roZwzM-q4uA!5e0!3m2!1sko!2skr!4v1733647563297!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
@@ -86,16 +86,29 @@
     </footer>
 
     <script>
-        function copyCode() {
-            // 해당 div 요소를 변수에 받고,
-            const code = document.querySelector(".join_code");
+        // 주소 클릭 시 클립보드에 복사
+        let copyTxt = document.querySelector('#copy__txt').innerText;
 
-            // window.navigator.clipboard.writeText() 메서드에
-            // div 요소의 텍스트 내용을 (code.textContent) 인자로 넣어주면 끝!
-            window.navigator.clipboard.writeText(code.textContent).then(() => {
-                alert('주소 복사 완료!');
-            });
-        };
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(copyTxt);
+            // console.log('Content copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+        }
+
+        // 복사완료 알림
+        let clickArea = document.querySelector(".click__area");
+
+        let animate = function() {
+        clickArea.classList.toggle('animate');
+        setTimeout(function(){
+            clickArea.classList.toggle('animate');
+        },1000);
+        }
+
+        clickArea.addEventListener('click', animate);
     </script>
 </body>
 </html>
